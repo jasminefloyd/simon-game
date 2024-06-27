@@ -30,7 +30,7 @@ function checkAnswer() {
             $('body').addClass('game-over');
             setTimeout(() => {
                 $('body').removeClass('game-over');
-                $('#level-title').text("Game Over, Press Any Key to Restart");
+                $('#level-title').text("Game Over, Press Any Key or Tap to Restart");
             }, 200);
             startOver();
         }
@@ -84,7 +84,7 @@ function startOver() {
     level = 0;
     gamePattern.length = 0;
     firstKeyPress = true;
-    $('#level-title').text("Press A Key to Start");
+    $('#level-title').text("Press A Key or Tap to Start");
 }
 
 $('button').click(function() {
@@ -107,6 +107,13 @@ $(document).keydown(function(event) {
     }
 });
 
+$(document).on('touchstart', function(event) {
+    if (firstKeyPress) {
+        firstKeyPress = false;
+        nextSequence();
+    }
+});
+
 $('#console-log').click(function() {
     nextSequence();
 });
@@ -117,6 +124,16 @@ $(document).keydown(function(event) {
     console.log("Key pressed:", event.key);
     if (firstKeyPress) {
         console.log("First key press detected");
+        firstKeyPress = false;
+        nextSequence();
+        console.log("Game pattern:", gamePattern);
+    }
+});
+
+$(document).on('touchstart', function(event) {
+    console.log("Screen tapped");
+    if (firstKeyPress) {
+        console.log("First tap detected");
         firstKeyPress = false;
         nextSequence();
         console.log("Game pattern:", gamePattern);
