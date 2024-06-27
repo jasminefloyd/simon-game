@@ -107,13 +107,9 @@ $(document).keydown(function(event) {
     }
 });
 
-$(document).on('touchstart', function(event) {
+$('#container').on("tap",function(){
     if (firstKeyPress) {
         firstKeyPress = false;
         nextSequence();
     }
-});
-
-$('#console-log').click(function() {
-    nextSequence();
 });
