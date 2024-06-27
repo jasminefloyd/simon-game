@@ -11,6 +11,19 @@ const wrong = new Audio('./sounds/wrong.mp3');
 let firstKeyPress = true;
 let level = 0;
 
+/*
+- When the first missed selection in the sequence, end the game
+- Move FDS footer to the very bottom of the screen
+- Add button in the blue space to start game instead of tap
+- Make the button look like a fingerprint
+- remove debugger logs
+- check the logic on the real simon game
+
+
+*/
+
+
+
 function checkAnswer() {
     if (userClickedPattern.length === gamePattern.length) {
         let isMatch = true;
