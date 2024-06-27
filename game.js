@@ -107,7 +107,7 @@ $(document).keydown(function(event) {
     }
 });
 
-$('#container').on("tap",function(){
+$(document).on("tap",function(){
     if (firstKeyPress) {
         firstKeyPress = false;
         nextSequence();
