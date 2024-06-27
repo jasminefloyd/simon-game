@@ -107,7 +107,7 @@ $(document).keydown(function(event) {
     }
 });
 
-$(document).on("tap",function(){
+$(document).on("touchstart", function(event) {
     if (firstKeyPress) {
         firstKeyPress = false;
         nextSequence();
