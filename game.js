@@ -117,25 +117,3 @@ $(document).on('touchstart', function(event) {
 $('#console-log').click(function() {
     nextSequence();
 });
-
-// Debugging statements to check the state
-console.log("Script loaded");
-$(document).keydown(function(event) {
-    console.log("Key pressed:", event.key);
-    if (firstKeyPress) {
-        console.log("First key press detected");
-        firstKeyPress = false;
-        nextSequence();
-        console.log("Game pattern:", gamePattern);
-    }
-});
-
-$(document).on('touchstart', function(event) {
-    console.log("Screen tapped");
-    if (firstKeyPress) {
-        console.log("First tap detected");
-        firstKeyPress = false;
-        nextSequence();
-        console.log("Game pattern:", gamePattern);
-    }
-});
