@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const startPopup = document.getElementById('start-popup');
     const startButton = document.getElementById('start-button');
 
-    startPopup.style.display = 'flex';
+    
 
     startButton.addEventListener('click', function() {
         if (firstKeyPress) {
@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         startPopup.style.display = 'none';
     });
+
+    startPopup.style.display = 'flex';
 
 
 });
