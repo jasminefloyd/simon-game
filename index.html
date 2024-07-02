@@ -11,20 +11,26 @@
 </head>
 
 <body>
-  <h1 id="level-title">Tap Anywhere to Start</h1>
-  <div class="container">
+  <h1 id="level-title">Remember It!</h1>
+  <div class="container" id='game-board'>
     <div class="toprow">
       <button id="green" class="btn green"></button>
       <button id="red" class="btn red"></button>
-      </div>
     </div>
-
     <div class="bottomrow">
       <button id="yellow" class="btn yellow"></button>
       <button id="blue" class="btn blue"></button>
     </div>
-    <p id="debugger"></p>
+    <!-- <p id="debugger"></p> -->
   </div>
+
+  <div id="start-popup" class="popup">
+    <div class="popup-content">
+        <h2>Welcome to Remember It</h2>
+        <p>Press the Start Game button to play!</p>
+        <button id="start-button">Start Game</button>
+    </div>
+</div>
   <div class="fds-footer">
     <p class="tagline">🏆 Greatness Magnified - An FDS Lifestyle</p>
 </div>

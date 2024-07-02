@@ -43,7 +43,7 @@ function checkAnswer() {
             $('body').addClass('game-over');
             setTimeout(() => {
                 $('body').removeClass('game-over');
-                $('#level-title').text("Game Over, Press Any Key or Tap to Restart");
+                $('#level-title').text("Game Over, Refresh to Restart");
             }, 200);
             startOver();
         }
@@ -113,16 +113,20 @@ $('button').click(function() {
     }
 });
 
-$(document).keydown(function(event) {
-    if (firstKeyPress) {
-        firstKeyPress = false;
-        nextSequence();
-    }
-});
 
-$(document).on("touchstart", function(event) {
-    if (firstKeyPress) {
-        firstKeyPress = false;
-        nextSequence();
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const startPopup = document.getElementById('start-popup');
+    const startButton = document.getElementById('start-button');
+
+    startButton.addEventListener('click', function() {
+        if (firstKeyPress) {
+            firstKeyPress = false;
+            setTimeout(nextSequence, 900); // 900 milliseconds (.9 second) delay
+        }
+        startPopup.style.display = 'none';
+    });
+
+
+    // Show the popup when the page loads
+    startPopup.style.display = 'flex';
 });
