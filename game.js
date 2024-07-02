@@ -22,7 +22,22 @@ let level = 0;
 
 */
 
+document.addEventListener('DOMContentLoaded', function() {
+    const startPopup = document.getElementById('start-popup');
+    const startButton = document.getElementById('start-button');
 
+    startPopup.style.display = 'flex';
+
+    startButton.addEventListener('click', function() {
+        if (firstKeyPress) {
+            firstKeyPress = false;
+            setTimeout(nextSequence, 900); // 900 milliseconds (.9 second) delay
+        }
+        startPopup.style.display = 'none';
+    });
+
+
+});
 
 function checkAnswer() {
     if (userClickedPattern.length === gamePattern.length) {
@@ -114,19 +129,4 @@ $('button').click(function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const startPopup = document.getElementById('start-popup');
-    const startButton = document.getElementById('start-button');
 
-    startButton.addEventListener('click', function() {
-        if (firstKeyPress) {
-            firstKeyPress = false;
-            setTimeout(nextSequence, 900); // 900 milliseconds (.9 second) delay
-        }
-        startPopup.style.display = 'none';
-    });
-
-
-    // Show the popup when the page loads
-    startPopup.style.display = 'flex';
-});
